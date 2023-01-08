@@ -1,0 +1,18 @@
+﻿@page "/test2"
+
+<h3>Component</h3>
+
+<p>count: @count</p>
+
+<button class="btn btn-primary" @onclick="test" ></button>
+
+@code {
+    private int count = 0;
+    [Parameter]
+    public int IncrementAmount { get; set; }
+
+    private void test()
+    {
+        this.count+= IncrementAmount;
+    }
+}

@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unstyled Lists with Bootstrap 3</title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <style type="text/css">
+        .ls-example {
+            margin: 20px;
+        }
+
+        .list-group {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>list example 1</h1>
+    <div class="ls-example">
+        <h2>Unstyled Unordered List</h2>
+        <ul class="list-unstyled">
+            <li>Home</li>
+            <li>
+                About
+                <ul>
+                    <li>Services</li>
+                    <li>Accessories</li>
+                </ul>
+            </li>
+            <li>Location</li>
+            <li>Contact</li>
+        </ul>
+        <hr>
+        <h2>Unstyled Ordered List</h2>
+        <ol class="list-unstyled">
+            <li>Home</li>
+            <li>
+                About
+                <ol>
+                    <li>Services</li>
+                    <li>Accessories</li>
+                </ol>
+            </li>
+            <li>Location</li>
+            <li>Contact</li>
+        </ol>
+    </div>
+
+    <h1>list example2, horizontal menu</h1>
+    <div class="ls-example">
+        <ul class="list-inline">
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Services</li>
+            <li>Location</li>
+            <li>Contact Us</li>
+        </ul>
+    </div>
+
+    <h1>example 3, horizontal definiation terms</h1>
+    <div class="ls-example">
+        <h2>Horizontal Definition Lists</h2>
+        <dl class="dl-horizontal">
+            <dt>Bootstrap</dt>
+            <dd>A combination of both HTML and CSS to create responsive web pages</dd>
+            <dt>CSS</dt>
+            <dd>
+                CSS is a language used to define how web pages will appear. It is a very powerful
+                tool with which can add colors and other styles to the web page.
+            </dd>
+            <dt>PHP</dt>
+            <dd>
+                A powerful language that can be used to add functionality to an HTML layout.
+            </dd>
+        </dl>
+    </div>
+
+    <h1>
+        example 4, group list
+    </h1>
+    <div class="ls-example" style="border:1px solid red">
+        <ul class="list-group">
+            <li class="list-group-item">Home</li>
+            <li class="list-group-item">About Us</li>
+            <li class="list-group-item">Services</li>
+            <li class="list-group-item">Contact Us</li>
+        </ul>
+    </div>
+
+    <h1>example 5, group list and add link</h1>
+    <div class="ls-example">
+        <div class="list-group">
+            <a href="#" class="list-group-item">
+                <span class="glyphicon glyphicon-file"></span> Go to Documents <span class="badge">140</span>
+            </a>
+            <a href="#" class="list-group-item active">
+                <span class="glyphicon glyphicon-camera"></span> Go to Pictures <span class="badge">20</span>
+            </a>
+            <a href="#" class="list-group-item">
+                <span class="glyphicon glyphicon-film"></span> Go to Videos <span class="badge">10</span>
+            </a>
+            <a href="#" class="list-group-item">
+                <span class="glyphicon glyphicon-music"></span> Go to Music <span class="badge">45</span>
+            </a>
+        </div>
+    </div>
+
+    <h1>
+        example 6, group list with paragraph
+    </h1>
+    <div class="ls-example">
+        <div class="list-group ">
+            <a href="#" class="list-group-item list-group-item-info">
+                <h4 class="list-group-item-headings list-group-item-warning">What is CSS?</h4>
+                <p class="list-group-item-text list-group-item-success">
+                    CSS is a language used to define how web pages will
+                    appear. It is a very powerful tool with which can add colors and other styles to the web
+                    page.
+                </p>
+            </a>
+            <a href="#" class="list-group-item active">
+                <h4 class="list-group-item-heading">What is Jquery?</h4>
+                <p class="list-group-item-text">
+                    Jquery is a language used in web design. It has so
+                    many frameworks which enable developers to achieve their functionalities. One can
+                    develop a fully functional website using Jquery
+                </p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">What is PHP?</h4>
+                <p class="list-group-item-text">
+                    A powerful language that can be used to add
+                    functionality to an HTML layout. Stands for Cascading Style Sheet
+                </p>
+            </a>
+        </div>
+    </div>
+
+    <h1>
+        example 7,  list with emphasize
+    </h1>
+    <div class="ls-example">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success">
+                A server is used to service requests
+                from a client machine.
+            </li>
+            <li class="list-group-item list-group-item-info">
+                The work of the client is to only
+                request for services from the server machine.
+            </li>
+            <li class="list-group-item list-group-item-warning">
+                In case the server is not available,
+                the client is notified of this.
+            </li>
+            <li class="list-group-item list-group-item-danger">
+                Clients can also make mistakes
+                while making requests. The server will not provide any service then.
+            </li>
+        </ul>
+    </div>
+    <br />
+    <div class="ls-example">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success">
+                A server is used to service requests
+                from a client machine.
+            </li>
+            <li class="list-group-item list-group-item-info">
+                The work of the client is to only
+                request for services from the server machine.
+            </li>
+            <li class="list-group-item list-group-item-warning">
+                In case the server is not available,
+                the client is notified of this.
+            </li>
+            <li class="list-group-item list-group-item-danger">
+                Clients can also make mistakes
+                while making requests. The server will not provide any service then.
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

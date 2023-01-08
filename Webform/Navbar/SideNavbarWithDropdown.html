@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Scrollable side navbar</title>
+    <meta charset="utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-docs-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .bs-docs-sidebar .active {
+            background: red;
+        }
+        .content {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div class="container">
+        <div class="row">
+            <div class="bs-docs-sidebar col-xs-3">
+                <ul class="nav">
+                    <li>
+                        <a href="#one">hello one</a>
+                    </li>
+                    <li>
+                        <a href="#two">hello two</a>
+                    </li>
+                    <li>
+                        <a href="#three">hello three</a>
+                    </li>
+                    <li class="dropdown open">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">hello four</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#four1">Section 4-1</a></li>
+                            <li><a href="#four2">Section 4-2</a></li>
+                            <li><a href="#four3">Section 4-3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="content col-xs-9">
+                <div id="one">
+                    <h1>This is section one.</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                    <p>
+                        Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                    <p>
+                        Vivamus quis molestie massa, ac dapibus nibh. Donec sapien enim, tincidunt quis consequat sed, mollis sit amet odio. Proin dapibus mi sit amet mi lobortis placerat. Aliquam ac lobortis nulla, elementum tincidunt mauris. Nulla nec tincidunt tellus. Nunc tristique diam et elit accumsan, volutpat semper urna viverra. Mauris cursus odio sem, in auctor neque sagittis a. Sed nisi nulla, pellentesque congue condimentum vel, ornare vel ex. Aliquam euismod scelerisque nisl, sed luctus enim elementum eu
+                    </p>
+                </div><!-- section1 end -->
+                <div id="two">
+                    <h1>This is section two.</h1>
+                    <p>
+                        Nullam sagittis, ante eu elementum semper, massa risus porta felis, quis molestie lorem ante sed enim. In eu vestibulum quam. Sed laoreet libero et erat sollicitudin, ac sodales metus varius. Morbi eget sodales sem. Suspendisse porta vestibulum est, nec consectetur velit consectetur quis. Cras risus turpis, molestie vel maximus varius, imperdiet a lorem. In ante tellus, mattis id elit et, vehicula mollis sapien. Curabitur gravida dui vel velit vulputate ultrices. Nunc sagittis purus nec nunc dignissim tempor.
+                    </p>
+                    <p>
+                        Semper tortor vitae arcu tincidunt, vitae tincidunt magna lacinia. Nunc eget blandit urna. Nullam sed lacinia ante. Proin ac purus nunc. Donec nec felis nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu est euismod, elementum justo blandit, sodales dui. Aliquam quis sagittis sapien. Nulla pretium sem sit amet varius tempor. Vestibulum non sodales lectus.
+                    </p>
+                    <p>
+                        Pellentesque id porttitor libero. Proin quis nunc mattis tortor blandit lacinia. Aenean libero dui, tempor sit amet sollicitudin vitae, vulputate eu nunc. Sed mattis vulputate elementum. Nulla eget vestibulum sapien. Duis pellentesque risus sit amet pretium dictum. Sed eget nulla libero. In hac habitasse platea dictumst. Maecenas porta lobortis consectetur. Donec viverra scelerisque ullamcorper. Integer eu quam porta, lacinia turpis ac, feugiat purus. Nulla pharetra luctus feugiat.
+                    </p>
+                </div><!-- section2 end -->
+                <div id="three">
+                    <h1>This is section three.</h1>
+                    <p>
+                        Suspendisse pulvinar rutrum ligula eu tincidunt. Proin tristique varius fermentum. Curabitur quis magna tempus, commodo risus nec, ullamcorper enim. Maecenas porttitor vitae magna quis feugiat. Aliquam commodo ligula non arcu tincidunt luctus. Quisque malesuada tortor a lacus cursus elementum. Phasellus nec iaculis lectus, sed mattis augue.
+                    </p>
+                    <p>
+                        Quisque non quam sed urna cursus lobortis non dictum sapien. Etiam eu nisl efficitur eros viverra finibus quis in mi. Integer in nulla eget lorem porta iaculis. Suspendisse ornare, nibh vel laoreet venenatis, eros turpis laoreet tortor, et lobortis justo purus sit amet massa. Vivamus ut libero at ex tincidunt lobortis. Donec euismod justo neque, et iaculis justo venenatis vel. Donec malesuada vitae magna nec vulputate. Proin nec nunc leo. Sed a faucibus leo, quis vehicula felis. Ut rutrum, leo sit amet tristique dignissim, lorem leo auctor erat, et efficitur enim nunc a lacus. Duis mattis vitae felis tempus suscipit. Sed fermentum eleifend vulputate.
+                    </p>
+                    <p>
+                        Aliquam enim lorem, euismod in fringilla vel, condimentum vitae diam. Aliquam vel pellentesque erat, et lacinia ante. Nunc a nibh mauris. Ut tempus risus in elit venenatis bibendum. Mauris non lobortis neque. Suspendisse dui nisl, maximus sed euismod ut, iaculis id eros. Nunc interdum tempus elit, ac fringilla elit pulvinar sed. Aenean aliquam ante justo, vitae egestas ex rutrum in. Suspendisse a neque dui. Aliquam fermentum auctor nibh a rhoncus. Vivamus consequat auctor lacus, eu fringilla magna venenatis ut. Aenean rutrum dapibus neque, at pretium turpis ultricies in. Cras tempus faucibus nunc, sit amet vulputate libero tincidunt in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris metus justo, pellentesque eu lorem in, bibendum dignissim libero. Praesent sollicitudin ultricies aliquam.
+                    </p>
+                </div><!-- section3 end -->
+                <div id="four1">
+                    <h1>This is section four part1.</h1>
+                    <p>
+                        Aenean tortor odio, tempus nec commodo vitae, congue et mauris. Nulla ultrices velit bibendum ex maximus, in malesuada nulla auctor. Sed viverra lacinia sodales. Vestibulum egestas purus et risus mattis molestie. Fusce imperdiet vitae ligula sed blandit. Morbi consectetur consequat ultricies. Pellentesque vel lacus finibus, pharetra sapien id, fermentum ante. Ut sagittis purus nisl, quis rutrum dui euismod sed. Nullam mattis odio est, vel vehicula tellus blandit non. Duis sodales volutpat orci. Integer tincidunt erat sed eleifend tincidunt. Nullam rutrum est nec augue tempus aliquet imperdiet sed sapien.
+                    </p>
+                    <p>
+                        Curabitur lobortis consectetur nisl sit amet venenatis. Praesent luctus luctus purus, in hendrerit turpis vestibulum eget. Maecenas porta ex tortor, eget mollis odio cursus quis. Maecenas tempor, erat ut placerat gravida, lectus libero lacinia dui, ac mollis libero risus eget dui. Aenean egestas faucibus lorem vehicula vulputate. Vestibulum efficitur placerat neque, ut sodales risus. Donec suscipit, neque rutrum pretium feugiat, diam sapien sollicitudin arcu, ac mollis felis lacus vel velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In id neque ut lectus rutrum condimentum. Curabitur in tellus massa. In feugiat justo at nibh porta, id hendrerit libero ornare. Proin vel nisi mollis, tempor massa sit amet, dapibus nisi. In quis lacinia eros, ac luctus lacus. Suspendisse fringilla luctus sagittis. Pellentesque suscipit, nisl ac congue faucibus, eros turpis sodales elit, sed consectetur tellus nulla viverra ex.
+                    </p>
+                </div>
+                <div id="four2">
+                    <h1>This is section four part2.</h1>
+                    <p>
+                        Sed ut imperdiet sapien. Phasellus aliquet tortor quis sapien rhoncus, sit amet finibus ipsum gravida. Sed vulputate ex id vulputate iaculis. Mauris sed tempus ante, ac faucibus ligula. Nulla ac pretium eros. Maecenas non scelerisque ipsum. Etiam arcu nulla, molestie sodales ipsum in, euismod sagittis erat.
+                    </p>
+                    <p>
+                        Curabitur auctor hendrerit libero a egestas. Quisque rhoncus orci sed ligula sagittis, vel fermentum eros ullamcorper. Aliquam posuere ac risus egestas porta. Integer ut massa dolor. Suspendisse sed metus eget nibh efficitur semper accumsan id lorem. Morbi eu molestie dolor, sit amet porta arcu. Curabitur auctor gravida metus, elementum porttitor lectus facilisis eu. Integer vel turpis eu nibh ullamcorper ultrices sed sit amet metus. Aliquam vehicula orci sit amet lacus pharetra feugiat. Phasellus fermentum porttitor eleifend. Morbi sit amet scelerisque odio, ut semper ipsum. Fusce dapibus malesuada eros, eu faucibus tellus fermentum vitae. Ut sed dapibus nunc. Pellentesque pulvinar quam eu tellus egestas gravida.
+                    </p>
+                </div>
+                <div id="four3">
+                    <h1>This is section four part3.</h1>
+                    <p>
+                        In mi magna, dignissim et mauris ut, elementum vulputate odio. Pellentesque sem tortor, tempus id justo quis, bibendum pharetra arcu. Phasellus quis sem quis elit auctor consectetur ac non dolor. Ut a varius libero. Praesent pulvinar tortor non ante lacinia pulvinar. Sed varius tempus arcu vitae tempor. Aliquam mattis nunc in dui sagittis, vel molestie ante malesuada. Fusce pellentesque, tellus sed scelerisque ultrices, quam velit vulputate lorem, ut mollis turpis velit sed turpis. Aliquam sed purus efficitur, congue nibh vitae, volutpat dolor. Suspendisse potenti. Praesent in erat in eros ultricies pulvinar. Quisque congue lectus non tellus efficitur, at malesuada augue convallis.
+                    </p>
+                    <p>
+                        Phasellus eget erat non quam porttitor pharetra ac ac justo. Pellentesque euismod, neque eget eleifend egestas, magna justo finibus sapien, at porttitor felis elit condimentum mauris. Quisque nunc lorem, tristique vitae ultricies at, facilisis a neque. Aenean non quam ut lorem porta laoreet a et lacus. Sed cursus commodo enim eu elementum. Mauris quis risus mollis, tempor urna vel, ultricies purus. Integer hendrerit ligula vel metus molestie sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec justo ex, lobortis non erat in, gravida condimentum magna. In ac mauris luctus, sollicitudin ante eu, scelerisque elit. Aliquam erat volutpat. Cras ornare urna sit amet turpis tempor rutrum. Integer id est a quam posuere fermentum. Ut quis venenatis ligula. Duis facilisis odio ac porttitor semper. Nunc id imperdiet quam, feugiat vestibulum massa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<!-- assume this page is http://www.example.com/a.html and request data from http://www.example.com/b.html -->
+<script>
+    function onLoad() {
+        // set domain name
+        document.domain = 'example.com';
+        // get iframe
+        var iframe = Document.getElementById('iframe');
+        var doc = iframe.contentDocument || iframe.contentWindow.document;
+        // manipulate b.html
+        alert(doc.getElementById('h1')[0].childNodes[0].nodeValue);
+    }
+</script>
+<iframe src="http://example.com/b.html" style="display: block; visibility: hidden"></iframe>
+    <!-- in b.html, declare: document.domain = 'example.com'; -->
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="well">buggy - Street View</div>
+    <div class="container" id="mapContainer" style="width: 1024px; height: 768px;"></div>
+
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-pano.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var platform = new H.service.Platform({
+            'app_id': 'YBJFdLUFDsTYe9aB6RGB',
+            'app_code': 'rvWUkiujC4jEkutEu-JpwA'
+        });
+        // Obtain the default map types from the platform object:
+        var defaultLayers = platform.createDefaultLayers();
+
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            defaultLayers.normal.map,
+            {
+                zoom: 10,
+                center: { lat: 52.5, lng: 13.4 }
+            });
+        // Enable the event system on the map instance:
+        var mapEvents = new H.mapevents.MapEvents(map);
+
+        // Instantiate the default behavior, providing the mapEvents object:
+        var behavior = new H.mapevents.Behavior(mapEvents);
+    </script>
+
+    <script>
+    // Configure panorama with platform credentials:
+    platform.configure(H.map.render.panorama.RenderEngine);
+
+    // Instantiate a map, giving the constructor the engine type to use:
+    map = new mapsjs.Map(mapElement, someBaseLayer, {
+        center: { lat: 48.8733641244471, lng: 2.294754032045603 },
+        zoom: 19,
+        engineType: H.Map.EngineType.PANORAMA
+    });
+</script>
+</body>
+</html>
+

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="well">Geocoding</div>
+    <div class="container col-md-12" id="mapContainer" style="width: 1024px; height: 768px"></div>
+</body>
+<script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+        type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+        type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"
+        type="text/javascript" charset="utf-8"></script>
+<script src="http://js.api.here.com/v3/3.0/mapsjs-places.js"
+        type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+    var platform = new H.service.Platform({
+        'app_id': 'YBJFdLUFDsTYe9aB6RGB',
+        'app_code': 'rvWUkiujC4jEkutEu-JpwA'
+    });
+
+    // Retrieve the target element for the map:
+    var targetElement = document.getElementById('mapContainer');
+
+    // Get default map types from the platform object:
+    var defaultLayers = platform.createDefaultLayers();
+
+    // Instantiate the map:
+    var map = new H.Map(
+      document.getElementById('mapContainer'),
+      defaultLayers.normal.map,
+      {
+          zoom: 10,
+          center: { lat: 43.7, lng: -79.4 }
+      });
+
+    // Obtain an Explore object through which to submit search
+// requests:
+var search = new H.places.Search(platform.getPlacesService()),
+    searchResult, error;
+
+// Define search parameters:
+var params = {
+  // Plain text search for places with the word "hotel"
+  // associated with them:
+  'q': 'hotel',
+  //  Search in the Chinatown district in San Francisco:
+  'at': '37.7942,-122.4070'
+  // search kobo
+  //'at': '43.6377565, -79.4231789'
+};
+
+// Define a callback function to handle data on success:
+function onResult(data) {
+  searchResult = data;
+  alert(Object.keys(searchResult));
+  alert(searchResult.results);
+}
+
+// Define a callback function to handle errors:
+function onError(data) {
+  error = data;
+}
+
+// Run a search request with parameters, headers (empty), and
+// callback functions:
+search.request(params, {}, onResult, onError);
+
+
+    // Enable the event system on the map instance:
+    var mapEvents = new H.mapevents.MapEvents(map);
+    // Instantiate the default behavior, providing the mapEvents object:
+    var behavior = new H.mapevents.Behavior(mapEvents);
+</script>
+
+
+</html>

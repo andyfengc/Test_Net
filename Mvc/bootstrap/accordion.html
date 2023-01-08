@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-1.9.1.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <style type="text/css">
+        .ls-example {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>demo 1, accordion</h1>
+    <div class="ls-example">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#colone">
+                            1. What is
+                            Bootstrap?
+                        </a>
+                    </h4>
+                </div>
+                <div id="colone" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <p>
+                            Bootstrap is just a combination of both HTML and CSS for web development.
+                            Pages developed with bootstrap respond well on screens of different sizes . <a href="#"
+                                                                                                           target="_blank">Read more.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#coltwo">
+                            2. What is PHP?
+                        </a>
+                    </h4>
+                </div>
+                <div id="coltwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
+                            PHP is a language which is used to add functionality web pages. Buttons and other
+                            components need to do something on click, and this is the purpose of PHP. <a href="#"
+                                                                                                         target="_blank">Read more.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#colthree">
+                            3. What is
+                            CSS?
+                        </a>
+                    </h4>
+                </div>
+                <div id="colthree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>
+                            It is one of the constituent components of bootstrap. For instance, most of bootstrap
+                            functionalities have been achieved with CSS. Mainly used for adding styles to web pages.
+                            Stands for Cascading Style Sheet <a href="#" target="_blank">Read more.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

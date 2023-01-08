@@ -1,0 +1,21 @@
+{
+  "name": "Kendo",
+  "homepage": "https://github.com/andyfengc/Test_.Net",
+  "authors": [
+    "Andy Feng <andyfengc@outlook.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "kendo-ui": "kendo-ui-core#~2015.3.1214"
+  }
+}

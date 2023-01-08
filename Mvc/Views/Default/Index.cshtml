@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<style media="print">
+    .no-print {
+        color: red;
+        display: none;
+    }
+    #print.print {
+        color: blue;
+        display: block !important;
+    }
+    </style>
+<div>
+    Test
+</div>
+
+<div id="print" class="print" style="display: none">
+    Print
+</div>
+<div class="no-print">
+    Not print
+</div>
+<div class="no-print">@Html.ActionLink("hello", "http://www.google.ca")</div>

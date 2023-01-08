@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="well">
+		weather in scarborough
+	</div>
+	<div class="container">
+		<div class="row">
+			<div id="weather" class="col-xs-12">
+				<table id="weatherTable" class="table table-striped">
+					<tr>
+						<td>Date</td>
+						<td>Day</td>
+						<td>High</td>
+						<td>Low</td>
+						<td>Text</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var callbackFunction = function(data) {
+    // var wind = data.query.results.channel.wind;
+    // alert(wind.chill);
+    //$("#weather").text(data.query.results.channel.item.title);
+    var items = data.query.results.channel.item.forecast;
+    for (var index in items){
+    	var date = items[index]["date"];
+    	var day = items[index]["day"];
+    	var high = items[index]["high"];
+    	var low = items[index]["low"];
+    	var text = items[index]["text"];
+    	$("#weatherTable").append("<tr><td>"+date+"</td><td>"+day+"</td><td>"+high+"</td><td>"+low+"</td><td>"+text+"</td></tr>");
+    }
+};
+</script>
+
+<!-- <script src="https://query.yahooapis.com/v1/public/yql?q=select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text='chicago, il')&format=json&callback=callbackFunction"></script> -->
+<script src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid ='4369'&format=json&callback=callbackFunction"></script>
+</html>

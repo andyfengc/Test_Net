@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="Scripts/introduction.js"></script>
+    <script src="../Scripts/jquery-1.12.3.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body ng-app="myModule">
+
+    <div ng-controller="myController">
+        <p>Model test</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>name</td>
+                    <td>age</td>
+                    <td>gender</td>
+                    <td>salary</td>
+                    <td>new</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employer in employers">
+                    <td>{{employer.name}}</td>
+                    <td>{{employer.age}}</td>
+                    <td>{{employer.gender}}</td>
+                    <td>{{employer.salary}}</td>
+                    <td>{{employer.new}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

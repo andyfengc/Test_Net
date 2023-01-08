@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form" method="post" >
+name: <input type="text" id="name" name="name" >
+email: <input type="text" id="email"  name="email">
+message: <input type="text" id="message"  name="message">
+<br>
+<input type="button" onClick="submitq();" value="send"  >
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+function submitq(){
+	var ajaxObj = new XMLHttpRequest();
+	ajaxObj.open("POST", "http://javatest-andyfengc.rhcloud.com/Happylife/visitorServlet", true);
+	ajaxObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	ajaxObj.send("name=kevin&email=kevin@gmail.com&message=hellodaddy");
+	ajaxObj.onreadystatechange=function()
+  {
+	  if (ajaxObj.readyState==4  )
+    {
+  alert("submit ok2");
+	}
+  }
+  
+	/*
+	document.getElementById("form").action="http://javatest-andyfengc.rhcloud.com/Happylife/visitorServlet";
+			document.getElementById("form").submit();
+			alert("Thank you for leaving me a message!");
+			return false;*/
+}
+
+$(document).ready(function(e) {
+    alert('ddd');
+});
+</script>
+</body>
+</html>

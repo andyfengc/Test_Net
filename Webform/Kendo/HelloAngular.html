@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="bower_components/kendo/styles/web/kendo.common.min.css" rel="stylesheet"></link>
+    <link href="bower_components/kendo/styles/web/kendo.default.min.css" rel="stylesheet"></link>
+
+    <script src="../Scripts/jquery-1.12.3.min.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="bower_components/kendo/js/kendo.all.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <div>
+        <p>date picker</p>
+        <label>Birthday: <input kendo-date-picker /></label>
+    </div>
+    <div ng-controller="myController">
+        <p>numberic textbox</p>
+        <input kendo-numerictextbox k-min="1" k-max="10" k-up-arrow-text="'Increment'" k-down-arrow-text="'Decrement'">
+    </div>
+    <div>
+        <p>textarea</p>
+        <textarea kendo-editor
+                  k-tools="[
+                  'bold',
+                  'italic',
+                  'undeline',
+                  {
+                    name: 'foreColor',
+                    palette: [ '#f00', '#0f0', '#00f' ]
+                  }
+              ]"></textarea>
+    </div>
+
+    <div ng-controller="ctrl2">
+        <p>Month picker</p>
+        <input kendo-date-picker k-options="monthPickerConfig">
+    </div>
+</body>
+</html>

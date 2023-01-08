@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="well">Map objects</div>
+    <div id="mapContainer" class="container" style="width:1024px; height:768px"></div>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js"
+            type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var platform = new H.service.Platform({
+            'app_id': 'YBJFdLUFDsTYe9aB6RGB',
+            'app_code': 'rvWUkiujC4jEkutEu-JpwA'
+        });
+        var defaultLayers = platform.createDefaultLayers();
+        var map = new H.Map(
+            document.getElementById("mapContainer"),
+            defaultLayers.normal.map,
+            {
+                zoom: 10,
+                //center: { lat: 43.7, lng: -79.4 }//toronto
+                center: { lat: 52.5, lng: 13.4 }//berlin
+            });
+        var mapEvents = new H.mapevents.MapEvents(map);
+        var behavior = new H.mapevents.Behavior(mapEvents);
+    </script>
+
+    <script type="text/javascript">
+        // add a group
+
+        // // Create a group that can hold map objects:
+        // group = new H.map.Group();
+
+        // // Add the group to the map object (created earlier):
+        // map.addObject(group);
+
+        // // Create a marker:
+        // marker = new H.map.Marker(map.getCenter());
+
+        // // Add the marker to the group (which causes
+        // // it to be displayed on the map)
+        // group.addObject(marker);
+    </script>
+
+    <script type="text/javascript">
+        // add a Marker with a Static SVG Icon
+
+        //// Define a variable holding SVG mark-up that defines an icon image:
+        //var svgMarkup = '<svg width="24" height="24" ' +
+        //    'xmlns="http://www.w3.org/2000/svg">' +
+        //    '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
+        //    'height="22" />' <text x="12" y="18" font-size="12pt" ' +
+        //'font-family="Arial" font-weight="bold" text-anchor="middle "' +
+        //'fill="white">HHHHHHHH</text></svg>';
+
+        //// Create an icon, an object holding the latitude and longitude, and a marker:
+        //var icon = new H.map.Icon(svgMarkup);
+        ////var coords = {lat: 43.6377565, lng: -79.4231789};//kobo
+        //var coords = {lat: 52.53075, lng: 13.3851};//nokia
+        //var marker = new H.map.Marker(coords, {icon: myIcon});
+
+        //// Add the marker to the map and center the map at the location of the marker:
+        //map.addObject(marker);
+        //map.setCenter(coords);
+
+    </script>
+
+    <script>
+        // add a Marker with a Static Image
+
+        //// Create a marker icon from an image URL:
+        //var icon = new H.map.Icon('images/package1.png');
+
+        //// Create a marker using the previously instantiated icon:
+        //// var marker = new H.map.Marker({ lat: 52.5, lng: 13.4 }, { icon: icon });//nokia
+        //var marker = new H.map.Marker({ lat: 43.6377565, lng: -79.4231789 }, { icon: icon });//kobo
+        //// Add the marker to the map:
+        //map.addObject(marker);
+
+    </script>
+
+    <script>
+        // add a Marker with HTML / SVG content
+
+        // Define a variable holding SVG mark-up that defines an animated icon image:
+        var animatedSvg =
+           '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" ' +
+           'y="0px" style="margin:-112px 0 0 -32px" width="136px"' +
+           'height="150px" viewBox="0 0 136 150"><ellipse fill="#000" ' +
+           'cx="32" cy="128" rx="36" ry="4"><animate attributeName="cx" ' +
+           'from="32" to="32" begin="0s" dur="1.5s" values="96;32;96" ' +
+           'keySplines=".6 .1 .8 .1; .1 .8 .1 1" keyTimes="0;0.4;1"' +
+           'calcMode="spline" repeatCount="indefinite"/>' +
+           '<animate attributeName="rx" from="36" to="36" begin="0s"' +
+           'dur="1.5s" values="36;10;36" keySplines=".6 .0 .8 .0; .0 .8 .0 1"' +
+           'keyTimes="0;0.4;1" calcMode="spline" repeatCount="indefinite"/>' +
+           '<animate attributeName="opacity" from=".2" to=".2"  begin="0s" ' +
+           ' dur="1.5s" values=".1;.7;.1" keySplines=" .6.0 .8 .0; .0 .8 .0 1" ' +
+           'keyTimes=" 0;0.4;1" calcMode="spline" ' +
+           'repeatCount="indefinite"/></ellipse><ellipse fill="#1b468d" ' +
+           'cx="26" cy="20" rx="16" ry="12"><animate attributeName="cy" ' +
+           'from="20" to="20" begin="0s" dur="1.5s" values="20;112;20" ' +
+           'keySplines=".6 .1 .8 .1; .1 .8 .1 1" keyTimes=" 0;0.4;1" ' +
+           'calcMode="spline" repeatCount="indefinite"/> ' +
+           '<animate attributeName="ry" from="16" to="16" begin="0s" ' +
+           'dur="1.5s" values="16;12;16" keySplines=".6 .0 .8 .0; .0 .8 .0 1" ' +
+           'keyTimes="0;0.4;1" calcMode="spline" ' +
+           'repeatCount="indefinite"/></ellipse></svg>';
+
+        // Create an icon object, an object with geographic coordinates and a marker:
+        var icon = new H.map.DomIcon(animatedSvg),
+           coords = { lat: -22.8906, lng: -43.2283 },
+           marker = new H.map.DomMarker(coords, { icon: icon });
+
+        // Set map center and zoom, add the marker to the map:
+        map.setCenter(coords);
+        map.setZoom(18);
+        map.addObject(marker);
+
+    </script>
+
+    <script>
+        // Adding a Geo Circle to the Map
+
+        //// Instantiate a circle object (using the default style):
+        //var circle = new H.map.Circle({ lat: 52.51, lng: 13.4 }, 8000);
+
+        //// Add the circle to the map:
+        //map.addObject(circle);
+    </script>
+
+
+    <script>
+        // Adding a Geo shape to the Map with Styling Geo Shapes
+
+        // Create a style object:
+        // var customStyle = {
+        //     strokeColor: 'black',
+        //     fillColor: 'rgba(255, 255, 255, 0.5',
+        //     lineWidth: 10,
+        //     lineCap: 'square',
+        //     lineJoin: 'bevel'
+        // };
+
+        // // Create a rectangle and pass the custom style as an options parameter:
+        // var rect = new H.map.Rect(new H.geo.Rect(53.5, 12.5, 51.5, 14.5),
+        //     { style: customStyle });
+
+        // // Add the rectangle to the map:
+        // map.addObject(rect);
+
+        // // Zoom the map to fit the rectangle:
+        // map.setViewBounds(rect.getBounds());
+    </script>
+
+    <script type="text/javascript">
+        // Adding a Geo shape to the Map with Shapes from Arbitrary Geographic Points
+
+        // // Define points to represent the vertices of a short route in Berlin, Germany:
+        // var points = [
+        //   { lat: 52.5309825, lng: 13.3845921 },
+        //   { lat: 52.5311923, lng: 13.3853495 },
+        //   { lat: 52.5313532, lng: 13.3861756 },
+        //   { lat: 52.5315142, lng: 13.3872163 },
+        //   { lat: 52.5316215, lng: 13.3885574 },
+        //   { lat: 52.5320399, lng: 13.3925807 },
+        //   { lat: 52.5321472, lng: 13.3935785 },
+        //   { lat: 52.5323832, lng: 13.395499 },
+        //   { lat: 52.5324261, lng: 13.3959818 },
+        //   { lat: 52.5325012, lng: 13.397795 },
+        //   { lat: 52.5325656, lng: 13.3986318 },
+        //   { lat: 52.5326192, lng: 13.3989215 },
+        //   { lat: 52.5325119, lng: 13.3989751 },
+        //   { lat: 52.5323081, lng: 13.3991039 },
+        //   { lat: 52.5318789, lng: 13.3994472 },
+        //   { lat: 52.5301194, lng: 13.4009278 },
+        //   { lat: 52.5297546, lng: 13.4012604 },
+        //   { lat: 52.5296152, lng: 13.4014106 },
+        //   { lat: 52.5289822, lng: 13.4018934 },
+        //   { lat: 52.5276947, lng: 13.4029663 },
+        //   { lat: 52.5271797, lng: 13.4033203 },
+        //   { lat: 52.5269973, lng: 13.4033954 },
+        //   { lat: 52.5265145, lng: 13.4035349 },
+        //   { lat: 52.5260746, lng: 13.4036851 },
+        //   { lat: 52.5260103, lng: 13.4038353 },
+        //   { lat: 52.5256562, lng: 13.40464 },
+        //   { lat: 52.5253022, lng: 13.4053588 },
+        //   { lat: 52.5250447, lng: 13.4059381 },
+        //   { lat: 52.5249588, lng: 13.4062278 },
+        //   { lat: 52.5249267, lng: 13.4064317 },
+        //   { lat: 52.5249052, lng: 13.406775 },
+        //   { lat: 52.5248623, lng: 13.4069574 },
+        //   { lat: 52.5241864, lng: 13.4089208 },
+        //   { lat: 52.5241327, lng: 13.4091246 },
+        //   { lat: 52.5240898, lng: 13.409307 },
+        //   { lat: 52.5240040, lng: 13.4096611 },
+        //   { lat: 52.5239503, lng: 13.4101653 },
+        //   { lat: 52.5239289, lng: 13.4110343 },
+        //   { lat: 52.5238967, lng: 13.4117103 },
+        //   { lat: 52.5238752, lng: 13.4120321 },
+        //   { lat: 52.5236285, lng: 13.4126866 },
+        //   { lat: 52.5231242, lng: 13.4139311 },
+        //   { lat: 52.5227809, lng: 13.4146714 },
+        //   { lat: 52.5224799, lng: 13.4152412 }
+        // ];
+
+        // // Initialize a strip and add all the points to it:
+        // var strip = new H.geo.Strip();
+        // points.forEach(function (point) {
+        //     strip.pushPoint(point);
+        // });
+
+        // // Initialize a polyline with the strip:
+        // var polyline = new H.map.Polyline(strip, { style: { lineWidth: 10 } });
+
+        // // Add the polyline to the map:
+        // map.addObject(polyline);
+
+        // // Zoom the map to make sure the whole polyline is visible:
+        // map.setViewBounds(polyline.getBounds());
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "Shopify",
+  "homepage": "https://github.com/andyfengc/Test_.Net",
+  "authors": [
+    "Andy Feng <andyfengc@outlook.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "qunit": "~1.20.0"
+  }
+}

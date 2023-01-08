@@ -1,0 +1,42 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>@DateTime.Now</h2>
+<div>
+    <input type="text" value="" id="input"/>
+</div>
+<div>
+    @Ajax.ActionLink("Call json action by ajax.actionlink", "Hello", "Json", new { name = "kevin" }, new AjaxOptions()
+{
+    HttpMethod = "GET",
+    UpdateTargetId = "result",
+    InsertionMode = InsertionMode.Replace
+})
+</div>
+<div>
+    <button id="btnJson2">Call Json By jquery ajax</button>
+</div>
+
+<div id="result">result is here</div>
+
+<script>
+    $(function () {
+        $("#btnJson2").click(
+            function () {
+                var inputValue = $("#input").val();
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Content("~/Json/Hello/")"+"?name="+inputValue,
+                    dataType: "json",
+                    success: function(data) {
+                        //alert(data.Name + " " + data.Email + " " + data.Message);
+                        $("#result").text(data.Name + " " + data.Email + " " + data.Message);
+                    }
+                });
+            }
+        );
+    })
+</script>

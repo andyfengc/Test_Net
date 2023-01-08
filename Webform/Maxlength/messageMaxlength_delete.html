@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+
+       function cnt(event)
+        {
+    document.getElementById("valmess2").innerHTML=""; // init and clear if b < max allowed character
+
+    a = document.getElementById("msgc").value;
+    b = a.length;
+    if (b > 5)
+    {
+        document.getElementById("valmess2").innerHTML="the max length of 400 characters is reached, you typed in  " + b + "characters";
+    }
+}
+</script>
+</head>
+<body>
+    <p>
+        <textarea id="msgc" onkeyup="cnt(event)" rows="1" cols="20"></textarea>
+    </p>
+    <p id="valmess2" style="color:red"></p>
+
+</body>
+<script type="text/javascript">
+            var textArea = document.getElementById("msgc");
+        textArea.onkeypress = function(){};
+         textArea.addEventListener("onclick", function(){});
+</script>
+</html>

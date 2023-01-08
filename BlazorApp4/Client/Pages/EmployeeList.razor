@@ -1,0 +1,35 @@
+﻿@page "/employee"
+@using WebApplication1.Models
+@inject HttpClient Http
+
+<h3>Employee 4</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Employee Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in employees)
+        {
+            <tr>
+                <td>@employee.Id</td>
+                <td>@employee.Name</td>
+                <td>@employee.Email</td>
+                <td>@employee.EmployeeNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    Employee[] employees = null;
+    protected override async Task OnInitializedAsync()
+    {
+        employees = await Http.GetFromJsonAsync<Employee[]>("api/Employee/employees");
+    }
+}

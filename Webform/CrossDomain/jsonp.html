@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <!-- primitive javascript -->
+<script>
+    function dosomething(jsondata) {
+        // process json data
+        // ...
+    }
+</script>
+<script src="http://example.com/data.php?callback=dosomething"></script>
+
+<!--jquery-->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+    $.getJSON('http://example.com/data.php?callback=dosomething', function (jsondata) {
+        // process json data
+        //...
+    });
+</script>
+</body>
+</html>

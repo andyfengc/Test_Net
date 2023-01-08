@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="well">address form</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="field field--required">
+					<label for="checkout_shipping_address_address1">Address</label>
+					<input placeholder="Address" autocomplete="shipping address-line1" size="30" type="text" name="checkout[shipping_address][address1]" id="checkout_shipping_address_address1" />
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<dic class="col-xs-12">
+				<input type="text" size="50" id="address_complete_2">
+			</dic>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function initAutocomplete1() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+	/** @type {!HTMLInputElement} */(document.getElementById('checkout_shipping_address_address1')),
+	{types: ['geocode']});
+
+  autocomplete2 = new google.maps.place.SearchBox(document.getElementById('address_complete_2'));
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  //autocomplete.addListener('place_changed', fillInAddress);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwO_kj1b7YdHj_Gp567LepbrRGW4s-n4s&signed_in=true&libraries=places&callback=initAutocomplete1"
+async defer></script>
+</body>
+</html>

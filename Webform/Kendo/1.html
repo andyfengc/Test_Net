@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Kendo UI Snippet</title>
+
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.common.min.css"/>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.rtl.min.css"/>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.silver.min.css"/>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.mobile.all.min.css"/>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.1.412/js/angular.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.1.412/js/kendo.all.min.js"></script>
+</head>
+<body>
+  
+<div ng-app="app" ng-controller="MyCtrl">
+  <label>Select mode: <select kendo-dropdownlist ng-model="gridOptions.selectable">
+    <option value="row">Row</option>
+    <option value="cell">Cell</option>
+    <option value="multiple, row">Multiple, row</option>
+    <option value="multiple, cell">Multiple, cell</option>
+  </select></label>
+
+  <div kendo-grid k-options="gridOptions" k-rebind="gridOptions.selectable"
+       k-on-change="handleChange(data, dataItem, columns)"></div>
+  <pre>
+  data: 
+  columns: 
+  <span ng-show="gridOptions.selectable == 'row' || gridOptions.selectable == 'cell'">DataItem: </span>
+  </pre>
+</div>
+<script>
+  angular.module("app", ["kendo.directives"]).controller("MyCtrl", function($scope) {
+    var data = new kendo.data.DataSource({
+      data: [
+        { text: "Foo", id: 1 },
+        { text: "Bar", id: 2 },
+        { text: "Baz", id: 3 }
+      ]
+    });
+    $scope.handleChange = function(data, dataItem, columns) {
+      $scope.data = data;
+      $scope.columns = columns;
+      $scope.dataItem = dataItem;
+    };
+    $scope.gridOptions = {
+      dataSource: data,
+      selectable: "row",
+      columns: [
+        { field: "text", title: "Text" },
+        { field: "id", title: "Id" }
+      ]
+    };
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/jquery-1.12.3.min.js"></script>
+    <script src="Scripts/introduction.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body ng-app="myModule">
+
+    <div>
+        <p>Data binding test</p>
+        <p>
+            Input something: <input type="text" ng-model="name" />
+        </p>
+        <p ng-bind="name"></p>
+        <p>Jquery equivalence</p>
+        <p>
+            Input something: <input type="text" name="name" value="" id="name" />
+        </p>
+        <p id="echo"></p>
+    </div>
+
+    <!-- ng-show test -->
+    <div ng-controller="myController">
+        <div>
+            <h1>Example of working ng-show/ng-hide with function </h1>
+        </div>
+        <!-- FORM -->
+        <div>
+            <button ng-click="showMe();">Click me for show</button>
+            <button ng-click="hideMe();">Click me for hide</button>
+        </div>
+        <div ng-show="show">
+            <p>I am showing</p>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("#name").keyup(function () {
+                var input = $("#name").val();
+                $("#echo").text(input);
+            });
+        });
+    </script>
+</body>
+</html>

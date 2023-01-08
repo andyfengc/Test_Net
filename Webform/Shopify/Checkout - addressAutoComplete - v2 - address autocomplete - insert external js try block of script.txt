@@ -1,0 +1,5 @@
+    var addressValidationScript = document.createElement('script');
+    addressValidationScript.async=true;
+    addressValidationScript.src = "https://static.koboscm.com/scripts/js/addressComplete_v2.min.js";
+    addressValidationScript.type = "text/javascript";
+    document.getElementsByTagName('body')[0].appendChild(addressValidationScript);

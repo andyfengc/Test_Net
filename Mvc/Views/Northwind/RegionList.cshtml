@@ -1,0 +1,54 @@
+﻿@using Mvc.Models.Northwind;
+@model IEnumerable<Region>
+@{
+    ViewBag.Title = "EmployeeList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div ng-controller="myController">
+    <h2>Employee List from mvc</h2>
+
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        @foreach (var region in Model)
+        {
+            <tr>
+                <td>@region.RegionID</td>
+                <td>@region.RegionDescription</td>
+            </tr>
+        }
+
+    </table>
+
+    <h2>Employee List from angular</h2>
+    <div class="form-group">
+        <input type="text" value="" class="form-control" ng-model="regionName" />
+        <input type="submit" value="Add Region" ng-click="addRegion()" />
+    </div>
+    you entered: {{regionName}}
+</div>
+<script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller("myController",
+        [
+            '$scope', '$http', function($scope, $http) {
+                $scope.regionName = '';
+                $scope.addRegion = function() {
+                    console.log($scope.regionName);
+                    $http.post('/regions',
+                    {
+                        regionName: $scope.regionName
+                    }).then(function(response) {
+                        console.log('added successfully');
+                    }, function(response) {
+                        console.log('failed: ' + response);
+                    })
+                }
+
+            }
+        ]);
+
+
+</script>

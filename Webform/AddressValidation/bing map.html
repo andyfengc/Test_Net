@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+   <head>
+      <title></title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+      <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+
+      <script type="text/javascript">
+
+      var map = null;
+
+      function GetMap()
+      {  
+
+         map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), {credentials: "4Y8D1a1GoYQ0vlJxlKkn~2NRT3bclo_Mqn9bUoqicZg~AqVogwOvEja_48axjGIlbfJ2i7zoTP_DjurTkg9rFEZ7of4SsnMOI2bYnNji5iDg", center: new Microsoft.Maps.Location(47.5, -122.3), zoom: 9 });
+
+         Microsoft.Maps.loadModule('Microsoft.Maps.Search', { callback: searchModuleLoaded });
+
+      }
+
+
+      function searchModuleLoaded()
+      {
+         var searchManager = new Microsoft.Maps.Search.SearchManager(map);
+
+         var geocodeRequest = {where:"12345 fake Way, Redmond, WA", count:10, callback:geocodeCallback, errorCallback:errCallback};
+         searchManager.geocode(geocodeRequest);
+      }
+     
+      function geocodeCallback(geocodeResult, userData)
+      {
+         alert("The first geocode result is " + geocodeResult.results[0].name + ".");
+      }
+
+
+      function errCallback(geocodeRequest)
+      {
+
+         alert("An error occurred.");
+      }
+      
+      </script>
+   </head>
+   <body onload="GetMap();">
+      <div id='mapDiv' style="position:relative; width:600px; height:600px;"></div> 
+   </body>
+</html>

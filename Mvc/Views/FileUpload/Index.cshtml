@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<p>aa @User.Identity.Name</p>
+
+<h2>Upload a file</h2>
+
+<form action="" method="post" enctype="multipart/form-data">
+
+    <label for="file">Filename:</label>
+    <input type="file" name="file" id="file"/>
+
+    <input type="submit" value="Upload Now"/>
+</form>
+
+<h2>Upload multiple files   </h2>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <div>
+        Name: <input type="text" name="name" value=" "/>
+    </div>
+    <div>
+        Age: <input type="text" name="age" value=" " />
+    </div>
+    <label for="file1">Filename:</label>
+    <input type="file" name="files" id="file1" />
+
+    <label for="file2">Filename:</label>
+    <input type="file" name="files" id="file2" />
+
+    <input type="submit" />
+</form>

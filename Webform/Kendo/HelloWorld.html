@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to Kendo UI!</title>
+	<!-- Common Kendo UI CSS for web and dataviz widgets -->
+	<link href="bower_components/kendo-ui/styles/kendo.common.min.css" rel="stylesheet" />
+
+	<!-- (optional) Kendo UI web widgets' RTL CSS, include only in right-to-left applications -->
+	<link href="bower_components/kendo-ui/styles/kendo.rtl.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- Default Kendo UI theme CSS for web and dataviz widgets -->
+	<link href="bower_components/kendo-ui/styles/kendo.default.min.css" rel="stylesheet" />
+
+	<!-- (optional) Kendo UI Mobile CSS, include only if you will use the mobile devices features -->
+	<link href="bower_components/kendo-ui/styles/kendo.default.mobile.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- jQuery JavaScript -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+	<!-- Kendo UI combined JavaScript -->
+	<script src="bower_components/kendo-ui/js/kendo.ui.core.min.js"></script>
+	<script src="bower_components/kendo-ui/js/kendo.datetimepicker.min.js"></script>
+	<script src="bower_components/kendo-ui/js/kendo.autocomplete.min.js"></script>
+	<script src="bower_components/kendo-ui/js/kendo.notification.min.js"></script>
+</head>
+<body>
+	Hello World!
+	<!-- HTML element from which the DatePicker would be initialized -->
+	<input id="datepicker" />
+	<script>
+		$(function() {
+        // Initialize the Kendo UI DatePicker by calling the kendoDatePicker jQuery plugin
+        $("#datepicker").kendoDatePicker();
+    });
+	</script>
+
+	<!-- auto complete -->
+	<p>Animal: <input id="animal" /></p>
+
+    <script>
+        $(function() {
+          $("#animal").kendoAutoComplete({ dataSource: [ "Ant", "Antilope", "Badger", "Beaver", "Bird" ] });
+        });
+    </script>
+
+
+    <span id="notification">notification</span>
+	
+<script>
+$(function(){
+    var notificationElement = $("#notification");
+
+    // initialize the widget
+    notificationElement.kendoNotification();
+
+    // get the widget object
+    var notificationWidget = notificationElement.data("kendoNotification");
+
+    // display a "foo" message
+    notificationWidget.show("foo");
+});
+</script>
+</body>
+</html>
