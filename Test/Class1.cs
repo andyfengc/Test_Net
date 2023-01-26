@@ -16,6 +16,7 @@ namespace Test
         public int Add(int x, int y)
         {
 		// test comment...
+		// com #2
             int result = 0;
             try
             {
