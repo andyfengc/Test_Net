@@ -52,12 +52,14 @@ using Console.Office;
 using System.Reflection;
 using Console.Sort;
 using Microsoft.Practices.ObjectBuilder2;
+using Console.Aws;
+using Console.Html;
 
 namespace Console
 {
     public class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //StudentDbContext db = new StudentDbContext();
             //int a = db.Students.Count();
@@ -295,9 +297,15 @@ namespace Console
             //}
 
             // sort algothm
-            var numbers = new int[] {9, 3, 15, -5, 77, 36, 39, -11, 101, 88, 99};
-            var sortedNumbers = BubbleSortTest.SortV2(numbers);
-            sortedNumbers.ForEach(number => System.Console.Write(number+ ", ") );
+            //var numbers = new int[] {9, 3, 15, -5, 77, 36, 39, -11, 101, 88, 99};
+            //var sortedNumbers = BubbleSortTest.SortV2(numbers);
+            //sortedNumbers.ForEach(number => System.Console.Write(number+ ", ") );
+
+            // aws
+            //await AwsEmail.Send();
+
+            // html
+            HtmlTest.ToCss(@"<p style=""color: red;""><strong><em><span style=""color: rgb(191, 144, 0);"">this is trans note for crewitin</span></em></strong></p>");
         }
 
         private delegate int del(int a, int b);
